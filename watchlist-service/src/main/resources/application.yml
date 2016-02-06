@@ -1,2 +1,11 @@
 server:
   port: 9090
+
+#https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-application-info
+info:
+  app:
+    name: watchlist service
+    description: service watchlist
+    version: 1.0.0
+
+
