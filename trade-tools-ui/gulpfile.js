@@ -109,6 +109,14 @@ gulp.task('copy:fontawesome', function() {
 });
 
 /**
+ * move everything from dist folder to web server
+ */
+gulp.task('deploy', function() {
+    return gulp.src('dist/**/*')
+        .pipe(gulp.dest('../trade-tools-web/src/main/resources/static'));
+});
+
+/**
  *
  */
 gulp.task('assets', [
