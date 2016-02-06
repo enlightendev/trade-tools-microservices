@@ -6,6 +6,7 @@ import {SettingsComponent} from "./settings/settings.component";
 import {WatchlistComponent} from "./watchlist/watchlist.component";
 import {TodoComponent} from "./todo/todo.component";
 import {SideBar} from "./sidebar/sidebar.component";
+import {ScratchComponent} from "./scratch/scratch.component";
 
 @Component({
     // Declare the tag name in index.html to where the component attaches
@@ -38,6 +39,11 @@ import {SideBar} from "./sidebar/sidebar.component";
         path: '/settings',
         component: SettingsComponent,
         name: 'Settings'
+    },
+    {
+        path: '/scratch',
+        component: ScratchComponent,
+        name: 'Scratch'
     }
 ])
 

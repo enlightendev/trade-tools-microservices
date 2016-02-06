@@ -6,6 +6,23 @@
 </div>
 
 <div class="row">
-    <p *ngFor="#watchlist of watchLists"> {{watchlist.name}}</p>
+
+    <div class="col-lg-6">
+        <table class="table table-condensed table-striped table-bordered">
+
+            <tr>
+                <th>List Type</th>
+                <th>List Name</th>
+            </tr>
+            <tr *ngFor="#watchlist of watchlistService.watchLists" (click)="listSelected(watchlist)">
+                <td>{{watchlist.type}}</td>
+                <td>{{watchlist.name}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-lg-6">
+        <span *ngIf="selectedList">{{selectedList.name}}</span>
+    </div>
 
 </div>
