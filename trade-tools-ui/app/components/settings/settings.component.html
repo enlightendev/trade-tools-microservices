@@ -1,74 +1,73 @@
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header" id="pgHeader">Settings</h1>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
-
-<!-- /.row -->
-<div class="row">
-
-    <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-bell fa-fw"></i> Notifications Panel
+<div layout="column" class="md-inline-form">
+    <md-toolbar class="md-hero" layout="row" layout-align="center center" layout-align-gt-md="end end">
+        <i class="secret-project" md-icon>person</i>
+    </md-toolbar>
+    <md-content layout-padding>
+        <div>
+            <form name="userForm">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Title</label>
+                        <input md-input [(value)]="user.title">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Email</label>
+                        <input md-input [(value)]="user.email" type="email">
+                    </md-input-container>
                 </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-bolt fa-fw"></i> Server Crashed!
-                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-warning fa-fw"></i> Server Not Responding
-                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
-                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
-                                    </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-money fa-fw"></i> Payment Received
-                                    <span class="pull-right text-muted small"><em>Yesterday</em>
-                                    </span>
-                        </a>
-                    </div>
-                    <!-- /.list-group -->
-                    <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Company (Disabled)</label>
+                        <input md-input [(value)]="user.company" disabled>
+                    </md-input-container>
                 </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>First name</label>
+                        <input md-input [(value)]="user.firstName">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Last Name</label>
+                        <input md-input [(value)]="user.lastName">
+                    </md-input-container>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Address</label>
+                    <input md-input [(value)]="user.address">
+                </md-input-container>
+                <md-input-container md-no-float class="md-block">
+                    <input md-input [(value)]="user.address2" placeholder="Address 2">
+                </md-input-container>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>City</label>
+                        <input md-input [(value)]="user.city">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>State</label>
+                        <select [(value)]="user.state">
+                            <option *ngFor="#state of states" [value]="state.abbrev">
+                                {{state.abbrev}}
+                            </option>
+                        </select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Postal Code</label>
+                        <input md-input ngControl="postalCode" [(value)]="user.postalCode" placeholder="12345"
+                               required mdPattern="^[0-9]{5}$" #postalCode="ngForm" mdMaxLength="5">
+                        <div [md-messages]="postalCode" role="alert">
+                            <div md-message="required">You must supply a postal code.</div>
+                            <div md-message="mdPattern">That doesn't look like a valid postal code.</div>
+                            <div md-message="mdMaxLength">Don't use the long version silly...we don't need to be that specific...
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Biography</label>
+                    <textarea md-input [(value)]="user.biography" columns="1" md-maxlength="150" rows="5"></textarea>
+                </md-input-container>
+            </form>
         </div>
-
+    </md-content>
 </div>

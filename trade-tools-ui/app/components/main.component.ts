@@ -7,6 +7,7 @@ import {WatchlistComponent} from "./watchlist/watchlist.component";
 import {TodoComponent} from "./todo/todo.component";
 import {SideBar} from "./sidebar/sidebar.component";
 import {ScratchComponent} from "./scratch/scratch.component";
+import {MATERIAL_DIRECTIVES} from "ng2-material/all";
 
 @Component({
     // Declare the tag name in index.html to where the component attaches
@@ -15,7 +16,7 @@ import {ScratchComponent} from "./scratch/scratch.component";
     // Location of the template for this component
     templateUrl: 'app/components/main.component.html',
 
-    directives: [SideBar, ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES, MATERIAL_DIRECTIVES]
 })
 
 @RouteConfig([

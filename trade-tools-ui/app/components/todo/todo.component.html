@@ -1,12 +1,7 @@
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">Todo</h1>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
+<h1 class="md-headline">Todo</h1>
+<md-divider></md-divider>
 
-<div class="row">
-
+<md-content class="md-padding">
     <span>{{remaining}} of {{todos.length}} remaining</span>
 
     [ <a (click)="archive()">archive</a> ]
@@ -15,4 +10,5 @@
 
     <todo-form (newTask)="addTask($event)"></todo-form>
 
-</div>
+</md-content>
+
