@@ -20,12 +20,10 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- build:bootstrap_css -->
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-        <!-- endbuild -->
+        <link rel="stylesheet" href="node_modules/ng2-material/dist/ng2-material.css">
+        <link rel="stylesheet" href="node_modules/ng2-material/dist/font.css">
 
-        <link rel="stylesheet" href="css/sb-admin2.css">
+        <link rel="stylesheet" href="css/style.css">
 
 
         <!-- 2. Configure SystemJS -->
@@ -50,12 +48,16 @@
                 //map tells the System loader where to look for things
                 map: {
                     vasia: "./src",
-                    'immutable': 'node_modules/immutable/dist/immutable.js'
+                    'immutable': 'node_modules/immutable/dist/immutable.js',
+                    "ng2-material": "node_modules/ng2-material/"
                     //,'aws-sdk': 'node_modules/aws-sdk/dist/aws-sdk.js'
                 },
                 packages: {
                     app: {
                         format: 'register',
+                        defaultExtension: 'js'
+                    },
+                    'ng2-material': {
                         defaultExtension: 'js'
                     }
                 }
@@ -74,15 +76,7 @@
 <!-- 3. Display the application -->
 <body>
 
-    <div id="wrapper">
         <main>Loading...</main>
-    </div>
-
-    <!-- jQuery library -->
-    <!-- build:bootstrap_libs -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- endbuild -->
 
 </body>
 </html>

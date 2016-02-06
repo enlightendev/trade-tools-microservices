@@ -6,8 +6,10 @@ import {LocationStrategy} from "angular2/router";
 import {provide} from "angular2/core";
 import {HashLocationStrategy} from "angular2/router";
 import {WatchlistService} from "./components/watchlist/watchlist.service";
+import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 
 bootstrap(MainComponent, [
+    MATERIAL_PROVIDERS,
     HTTP_PROVIDERS,
     ROUTER_PROVIDERS,
     WatchlistService,

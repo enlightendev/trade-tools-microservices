@@ -1,34 +1,12 @@
 import {Component} from "angular2/core";
+
+import {MATERIAL_DIRECTIVES} from "ng2-material/all";
 @Component({
-    template: `
-        <table>
-            <tr *ngFor="#process of processDocumentList">
-                <td>{{process.process}}</td>
-            </tr>
-        </table>
-    `
+    templateUrl: 'app/components/scratch/scratch.component.html',
+    directives: [MATERIAL_DIRECTIVES],
+    styleUrls: ['app/components/scratch/scratch.component.css'],
 })
-
 export class ScratchComponent {
-
-    public processDocumentList = [
-        {
-            process: 'application-kit',
-            document: [
-                { name: 'doc1'},
-                { name: 'doc10'},
-                { name: 'doc5'}
-            ]
-        },
-        {
-            process: 'underwrite',
-            document: [
-                { name: 'doc12'},
-                { name: 'doc1'},
-                { name: 'doc7'}
-            ]
-        }
-    ];
 
     constructor(){
 
