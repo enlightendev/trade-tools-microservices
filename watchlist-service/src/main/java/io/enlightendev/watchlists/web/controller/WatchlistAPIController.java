@@ -12,7 +12,7 @@ import io.enlightendev.watchlists.model.Watchlist;
 /**
  *
  */
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins={"http://localhost:8080","http://localhost:3000"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class WatchlistAPIController {

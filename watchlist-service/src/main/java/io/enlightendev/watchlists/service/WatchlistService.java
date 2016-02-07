@@ -23,4 +23,8 @@ public class WatchlistService {
         return watchLists;
     }
 
+    public void addWatchlist(Watchlist watchlist){
+        watchLists.add(watchlist);
+    }
+
 }
