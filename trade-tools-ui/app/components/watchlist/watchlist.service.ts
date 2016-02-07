@@ -24,4 +24,8 @@ export class WatchlistService {
         //return watchLists.map(w => new WatchList(w.id, w.name, w.type));
     }
 
+    addWatchlist(watchlist:WatchList):void {
+        this.watchLists.push(watchlist);
+    }
+
 }

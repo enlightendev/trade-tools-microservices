@@ -11,18 +11,20 @@
         <table class="table table-condensed table-striped table-bordered">
 
             <tr>
-                <th>List Type</th>
                 <th>List Name</th>
+                <th>List Type</th>
             </tr>
             <tr *ngFor="#watchlist of watchlistService.watchLists" (click)="listSelected(watchlist)">
-                <td>{{watchlist.type}}</td>
                 <td>{{watchlist.name}}</td>
+                <td>{{watchlist.type}}</td>
             </tr>
         </table>
+
+        <span *ngIf="selectedList">{{selectedList.name}}</span>
     </div>
 
     <div class="col-lg-6">
-        <span *ngIf="selectedList">{{selectedList.name}}</span>
+        <watch-list-form></watch-list-form>
     </div>
 
 </div>
