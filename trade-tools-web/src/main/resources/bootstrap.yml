@@ -1,0 +1,6 @@
+# bootstrap properties loaded early in application start
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9292

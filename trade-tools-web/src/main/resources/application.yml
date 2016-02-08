@@ -7,3 +7,8 @@ info:
     name: trade tools web container
     description: tomcat container for serving angular client ui.
     version: 1.0.0
+
+#application.name will be used to lookup the appropriate configuration via config server
+spring:
+  application:
+    name: trade-tools-web
