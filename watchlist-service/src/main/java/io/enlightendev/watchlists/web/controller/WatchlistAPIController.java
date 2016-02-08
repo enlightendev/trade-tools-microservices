@@ -20,7 +20,7 @@ public class WatchlistAPIController {
     @Autowired
     private WatchlistService watchlistService;
 
-    @RequestMapping("/watchlist")
+    @RequestMapping("/watchlist-custom")
     public List<Watchlist> getWatchLists(){
         return watchlistService.getWatchLists();
     }

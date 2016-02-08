@@ -8,4 +8,13 @@ info:
     description: service watchlist
     version: 1.0.0
 
+#application.name will be used to lookup the appropriate configuration via config server
 
+spring:
+  application:
+    name: watchlist-service
+  data:
+    rest:
+      base-path: /api
+    mongodb:
+      uri: mongodb://localhost:27017/watchlist-service

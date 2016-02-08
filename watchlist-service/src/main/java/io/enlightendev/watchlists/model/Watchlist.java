@@ -1,16 +1,20 @@
 package io.enlightendev.watchlists.model;
 
+import org.springframework.data.annotation.Id;
+
 public class Watchlist {
+
+    @Id
+    private String id;
 
     private String name;
 
-    private String id;
-
     private String type;
 
-    public Watchlist(String name, String id, String type) {
+    public Watchlist(){}
+
+    public Watchlist(String name, String type) {
         this.name = name;
-        this.id = id;
         this.type = type;
     }
 

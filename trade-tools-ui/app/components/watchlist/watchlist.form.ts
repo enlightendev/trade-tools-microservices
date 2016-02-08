@@ -28,6 +28,21 @@ export class WatchlistForm {
     onSubmit(data){
         this.data = JSON.stringify(data, null, 2);
         console.log(data);
-        this.watchlistService.addWatchlist(new WatchList(3, data.name, data.type));
+
+        this.watchlistService.createWatchlist(new WatchList(data.name, data.type))
+            .subscribe(
+                //data => this.policies = data,
+                data => this.submitWatchlist(data),
+                err => this.logError(err),
+                () => console.log('templateService.createTemplate Request Complete')
+            )
+    }
+
+    submitWatchlist(data){
+        this.watchlistService.watchLists.push(WatchList.fromJSON(data));
+    }
+
+    logError(err){
+        console.error('There was an error: ' + err);
     }
 }

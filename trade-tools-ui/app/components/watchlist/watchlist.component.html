@@ -13,10 +13,12 @@
             <tr>
                 <th>List Name</th>
                 <th>List Type</th>
+                <th>Actions</th>
             </tr>
             <tr *ngFor="#watchlist of watchlistService.watchLists" (click)="listSelected(watchlist)">
                 <td>{{watchlist.name}}</td>
                 <td>{{watchlist.type}}</td>
+                <td><a (click)="deleteSelected(watchlist)">D</a></td>
             </tr>
         </table>
 

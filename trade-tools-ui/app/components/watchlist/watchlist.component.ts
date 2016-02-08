@@ -20,4 +20,24 @@ export class WatchlistComponent{
         this.selectedList = list;
     }
 
+    deleteSelected(watchlist:WatchList){
+        this.watchlistService.deleteWatchlist(watchlist)
+            .subscribe(
+                //data => this.policies = data,
+                data => this.deleteWatchlist(),
+                err => this.logError(err),
+                () => console.log('templateService.createTemplate Request Complete')
+            )
+    }
+
+
+    deleteWatchlist(){
+        this.watchlistService.getWatchLists();
+    }
+
+    logError(err){
+        console.error('There was an error: ' + err);
+        this.watchlistService.getWatchLists();
+    }
+
 }
