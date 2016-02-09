@@ -13,8 +13,3 @@ info:
 spring:
   application:
     name: watchlist-service
-  data:
-    rest:
-      base-path: /api
-    mongodb:
-      uri: mongodb://localhost:27017/watchlist-service
