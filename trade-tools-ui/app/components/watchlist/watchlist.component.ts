@@ -2,13 +2,17 @@ import {Component} from "angular2/core";
 import {WatchlistService} from "./watchlist.service";
 import {WatchList} from "./watchlist.model";
 import {WatchlistForm} from "./watchlist.form";
+import {WatchlistTickerListComponent} from "./watchlist.tickerlist.component";
 
 @Component({
     selector: 'watchlist',
     templateUrl: 'app/components/watchlist/watchlist.component.html',
-    directives: [WatchlistForm]
+    styleUrls: ['app/components/watchlist/watchlist.component.css'],
+    directives: [WatchlistForm, WatchlistTickerListComponent]
 })
 export class WatchlistComponent{
+
+    isHovered = false;
 
     public selectedList:WatchList;
 
@@ -26,10 +30,9 @@ export class WatchlistComponent{
                 //data => this.policies = data,
                 data => this.deleteWatchlist(),
                 err => this.logError(err),
-                () => console.log('templateService.createTemplate Request Complete')
+                () => console.log('watchlistService.deleteSelected Request Complete')
             )
     }
-
 
     deleteWatchlist(){
         this.watchlistService.getWatchLists();
@@ -38,6 +41,16 @@ export class WatchlistComponent{
     logError(err){
         console.error('There was an error: ' + err);
         this.watchlistService.getWatchLists();
+    }
+
+    rotateCard(data){
+        console.log(data);
+        if(this.isHovered){
+            this.isHovered = false;
+        }else{
+            this.isHovered = true;
+        }
+
     }
 
 }

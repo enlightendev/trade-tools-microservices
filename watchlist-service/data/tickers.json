@@ -1,0 +1,15 @@
+[
+  {
+    "symbol": "msft",
+    "levels": [
+      {
+        "level": 123,
+        "description": "50% rectracemtn"
+      },
+      {
+        "level": 100,
+        "description": "round # support"
+      }
+    ]
+  }
+]

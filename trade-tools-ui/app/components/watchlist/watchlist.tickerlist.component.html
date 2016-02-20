@@ -1,0 +1,27 @@
+<table class="table table-condensed table-striped table-bordered">
+
+    <tr>
+        <th>Ticker</th>
+        <th>Alerts</th>
+        <th>levels</th>
+    </tr>
+    <tr *ngFor="#ticker of tickers" (click)="selectTicker(ticker)">
+        <td>{{ticker.ticker}}</td>
+        <td>5</td>
+        <td>{{ticker.levels.length}}</td>
+    </tr>
+
+</table>
+
+<table *ngIf="selectedTicker" class="table table-condensed table-striped table-bordered">
+
+    <tr>
+        <th>level</th>
+        <th>description</th>
+    </tr>
+    <tr *ngFor="#level of selectedTicker.levels">
+        <td>{{level.level}}</td>
+        <td>{{level.description}}</td>
+    </tr>
+
+</table>

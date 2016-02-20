@@ -34,7 +34,7 @@ export class WatchlistForm {
                 //data => this.policies = data,
                 data => this.submitWatchlist(data),
                 err => this.logError(err),
-                () => console.log('templateService.createTemplate Request Complete')
+                () => console.log('watchlistService.createWatchlist Request Complete')
             )
     }
 
