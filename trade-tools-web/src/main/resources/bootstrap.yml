@@ -3,4 +3,8 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:9292
+      uri: http://localhost:9000
+
+#application.name will be used to lookup the appropriate configuration via config server
+  application:
+    name: trade-tools-web
