@@ -13,8 +13,16 @@ public class PropertyController {
     @Value("${specialprop}")
     String specialProperty;
 
+    @Value("${aws-region}")
+    String region;
+
     @RequestMapping("/property")
     public String showSpecialProperty() {
-        return "The property is: " + specialProperty;
+
+        String str =
+            String.format("Special prop: %s; region: %s",
+            new Object[]{specialProperty, region});
+
+        return str;
     }
 }

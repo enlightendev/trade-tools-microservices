@@ -8,3 +8,6 @@ spring:
 #application.name will be used to lookup the appropriate configuration via config server
   application:
     name: trade-tools-web
+#
+#  profiles:
+#    active: aws
