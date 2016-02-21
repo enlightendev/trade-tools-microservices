@@ -1,11 +1,14 @@
 # bootstrap properties loaded early in application start
 
 spring:
+  # Spring Cloud-based services have a spring.application.name
+  # property. It’s used to pull down configuration from the
+  # Configuration server, to identify the service to Eureka,
+  # and is referenceable in numerous other contexts when
+  # building Spring Cloud-based applications.
+  # https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka#speak-for-yourself
+  application:
+    name: watchlist-service
   cloud:
     config:
       uri: http://localhost:9000
-
-#application.name will be used to lookup the appropriate configuration via config server
-#there should be a repo with this name
-  application:
-    name: watchlist-service

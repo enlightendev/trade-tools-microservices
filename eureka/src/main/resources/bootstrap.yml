@@ -1,0 +1,4 @@
+# bootstrap properties loaded early in application start
+spring:
+  application:
+    name: eureka-server
