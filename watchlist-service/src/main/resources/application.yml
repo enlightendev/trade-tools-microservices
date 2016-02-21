@@ -1,13 +1,15 @@
 server:
   port: 9001
 
-#https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-application-info
+# https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-application-info
 info:
   app:
     name: watchlist service
     description: watchlist service
     version: 1.0.0
 
+# These properties just tell the Eureka client where the Eureka server
+# is located so it knows where to register itself.
 eureka:
   client:
     serviceUrl:
