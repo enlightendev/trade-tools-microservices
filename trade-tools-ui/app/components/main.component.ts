@@ -55,12 +55,7 @@ export class MainComponent implements AfterViewInit {
 
     ngAfterViewInit() {
 
-        console.log(this.el.nativeElement);
-
-        var pw = $(this.el.nativeElement).find('#page-wrapper');
-        //pw.css( "color", "red" );
-
-        console.log(pw);
+        console.log('after view');
     }
 
 }
