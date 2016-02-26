@@ -28,7 +28,7 @@ export class WatchlistService {
 
     public createWatchlist(watchlist:WatchList) {
 
-        var url = 'http://localhost:9090/api/watchlist';
+        var url = 'http://localhost:9001/api/watchlist';
 
         if (watchlist.id) {
             url = url + '/' + watchlist.id
