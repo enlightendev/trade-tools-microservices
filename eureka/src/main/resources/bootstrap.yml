@@ -1,4 +1,6 @@
-# bootstrap properties loaded early in application start
 spring:
   application:
-    name: eureka-server
+    name: eureka-service
+  cloud:
+    config:
+      uri: http://localhost:9999
