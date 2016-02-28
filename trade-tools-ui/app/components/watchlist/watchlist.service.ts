@@ -16,7 +16,7 @@ export class WatchlistService {
     }
 
     getWatchLists():any {
-        this.http.get('http://localhost:9001/api/watchlist')
+        this.http.get('/watchlist')
               // Call map on the response observable to get the parsed people object
                .map(res => res.json())
                // Subscribe to the observable to get the parsed people object and attach it to the
@@ -28,7 +28,7 @@ export class WatchlistService {
 
     public createWatchlist(watchlist:WatchList) {
 
-        var url = 'http://localhost:9001/api/watchlist';
+        var url = '/watchlist';
 
         if (watchlist.id) {
             url = url + '/' + watchlist.id
@@ -50,7 +50,7 @@ export class WatchlistService {
 
     public deleteWatchlist(watchlist:WatchList) {
 
-        var url = 'http://localhost:9001/api/watchlist';
+        var url = '/watchlist';
 
         if (watchlist.id) {
             url = url + '/' + watchlist.id

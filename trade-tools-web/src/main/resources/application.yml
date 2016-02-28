@@ -14,3 +14,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9002/eureka/
+
+zuul:
+  routes:
+    resource:
+      path: /watchlist/**
+      url: http://localhost:9001/api/watchlist
